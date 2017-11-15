@@ -12,7 +12,7 @@ const directors = require('./routes/directors');
 app.set ('view engine', 'hbs')
 
 app.get('/', (req, res) => {
-  res.render('movies')
+  res.redirect('/movies')
 })
 
 app.listen(port, () => {
