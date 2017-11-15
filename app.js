@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = process.env.NODE_ENV || 3000
 const bodyParser = require('body-parser')
 
 
@@ -13,10 +12,6 @@ app.set ('view engine', 'hbs')
 
 app.get('/', (req, res) => {
   res.redirect('/movies')
-})
-
-app.listen(port, () => {
-  console.log('listening on port:', port)
 })
 
 app.use('/', movies)
