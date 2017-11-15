@@ -1,0 +1,18 @@
+
+exports.up = function(knex, Promise) {
+  return Promise.all([
+    knex.schema.createTable('movies', (table) => {
+      table.increments()
+      table.string('title')
+      table.string('genre')
+      table.string('year')
+      table.integer('director_id').references('people.id')
+    })
+  ])
+};
+
+exports.down = function(knex, Promise) {
+  return Promise.all([
+    knex.schema.dropTable('movies')
+  ])
+};
