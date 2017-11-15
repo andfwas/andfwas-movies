@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 const bodyParser = require('body-parser')
 
+
 const movies = require('./routes/movies')
 const actors = require('./routes/actors');
 const directors = require('./routes/directors');
@@ -21,5 +22,6 @@ app.listen(port, () => {
 app.use('/', movies)
 app.use('/', actors)
 app.use('/', directors)
+
 
 module.exports = app
